@@ -14,6 +14,10 @@ Components of the stand-alone cluster:
 
 
 ## Building the Docker Images
+
+*Windows users*: before cloning any repository with scripts that will run on unix host, you should review how git handles end-of-line characters.  If git adds carriage returns to .sh file, and that script makes it to a Docker container, you'll likely encounter "file not found" failures when the container runs a script starting "#!/bin/bash^M".  Check for example:  https://willi.am/blog/2016/08/11/docker-for-windows-dealing-with-windows-line-endings/
+
+
 Three Docker images are required to run the Spark cluster:
 * `spark-master` - Spark Stand-alone Cluster manager
 * `spark-worker` - Spark worker process
